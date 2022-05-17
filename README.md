@@ -8,8 +8,6 @@ Wanted to make an easy avenue to publish data into Splunk through Node-Red.
 
 ## Installation
 
-The easiest way to install is through the Node-Red Palette Manager that can be found in the menu on the top right hand corner of the Node-Red ui.
-
 ### Manual install with npm
 
 ```sh

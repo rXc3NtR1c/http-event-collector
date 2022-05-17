@@ -1,4 +1,4 @@
-var SplunkLogger = require("splunk-logging").Logger;
+var SplunkLogger = require("splunk-sdk").Logger;
 
 
 module.exports = function(RED) {
