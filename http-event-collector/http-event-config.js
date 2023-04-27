@@ -9,5 +9,5 @@ module.exports = function(RED) {
         this.Index = c.Index;
         this.LogLevel = c.LogLevel;
     }
-    RED.nodes.registerType("splunk-http-event-config",HTTPEventConfig);
+    RED.nodes.registerType("splunk-http-event-config", HTTPEventConfig);
 };

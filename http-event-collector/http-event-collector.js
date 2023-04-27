@@ -1,17 +1,15 @@
-var SplunkLogger = require("splunk-sdk").Logger;
+var SplunkLogger = require("splunk-logging").Logger;
 
 
 module.exports = function(RED) {
     function HTTPEventCollector(config) {
-        RED.nodes.createNode(this,config);
+        RED.nodes.createNode(this, config);
 
         var context = this.context();
         var node = this
         var server = RED.nodes.getNode(config.server);
         var message = null;
-
-
-
+        
         /**
          * Only the token property is required.
          */
@@ -54,8 +52,7 @@ module.exports = function(RED) {
 
             var payload = {
                 // Data sent from previous node msg.payload
-                message: message,                
-                //msgMetaData : msg,
+                message: message,
                 // Metadata
                     metadata: {
                         source: this.Source,
@@ -68,8 +65,6 @@ module.exports = function(RED) {
             
             };
 
-            
-
             console.log("Sending payload", payload);
             Logger.send(payload, function(err, resp, body) {
                 // If successful, body will be { text: 'Success', code: 0 }
@@ -79,5 +74,5 @@ module.exports = function(RED) {
 
         });
     }
-    RED.nodes.registerType("splunk-http-event-collector",HTTPEventCollector);
+    RED.nodes.registerType("splunk-http-event-collector", HTTPEventCollector);
 };

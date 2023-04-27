@@ -1,8 +1,8 @@
 {
   "name": "@rxc3ntr1c/node-red-contrib-http-event-collector",
-  "version": "1.0.0",
+  "version": "1.0.19",
   "dependencies": {
-    "splunk-sdk": "1.11.0"
+    "splunk-logging": "^0.11.1"
   },
   "repository": {
     "type": "git",
@@ -17,8 +17,7 @@
   "node-red": {
     "nodes": {
       "splunk-http-event-config": "http-event-collector/http-event-config.js",
-      "splunk-http-event-collector": "http-event-collector/http-event-collector.js",
-      "splunk-http-event-collector-metric": "http-event-collector/http-event-collector-metric.js"
+      "splunk-http-event-collector": "http-event-collector/http-event-collector.js"
     }
   }
 }
