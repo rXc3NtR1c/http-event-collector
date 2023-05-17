@@ -8,6 +8,7 @@ module.exports = function(RED) {
         this.Source = c.Source;
         this.Index = c.Index;
         this.LogLevel = c.LogLevel;
+        this.LogConsole = c.LogConsole;
     }
     RED.nodes.registerType("splunk-http-event-config", HTTPEventConfig);
 };
