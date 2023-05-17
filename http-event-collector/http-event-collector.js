@@ -30,7 +30,8 @@ module.exports = function(RED) {
             
             Logger.error = function(err, context) {
                 // Handle errors here
-                console.log("error", err, "context", context);
+                if (server.LogConsole == true)
+                    console.log("error", err, "context", context);
             };
 
             // set the log level if it is part of the message
@@ -65,10 +66,13 @@ module.exports = function(RED) {
             
             };
 
-            console.log("Sending payload", payload);
+            if (server.LogConsole == true)
+                console.log("Sending payload", payload);
+                
             Logger.send(payload, function(err, resp, body) {
                 // If successful, body will be { text: 'Success', code: 0 }
-                console.log("Response from Splunk", body);
+                if (server.LogConsole == true)
+                    console.log("Response from Splunk", body);
             });
 
 
